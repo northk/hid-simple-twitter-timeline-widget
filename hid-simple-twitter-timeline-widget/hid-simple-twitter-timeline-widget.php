@@ -3,7 +3,7 @@
 Plugin Name: hid-simple-twitter-timeline-widget
 Plugin URI: http://highintegritydesign.com
 Description: Display a Twitter public timeline as a widget.
-Version: 1.0
+Version: 1.1
 Author: North Krimsly
 Author URI: http://highintegritydesign.com
 License: GPL2
@@ -64,12 +64,12 @@ class HID_Simple_Twitter_Timeline_Widget extends WP_Widget {
             print($args['before_title'] . $title . $args['after_title']);
 
         // Only display the widget if both twitter widget ID and number of tweets is defined
-        // Construct a reference to a pre-built Twitter widget
+        // Construct a reference to a pre-built Twitter widget and a spinner gif
         if (ctype_digit($instance['widget_id']) && ctype_digit($instance['num_tweets'])) {
             $html = '<a class="twitter-timeline" href="https://twitter.com/northk" data-widget-id="' 
                 . $instance['widget_id'] . '" data-theme="light" data-link-color="#0862" data-chrome="noheader nofooter noborders noscrollbar transparent" data-tweet-limit="'
                 . $instance['num_tweets'] . '"><img src="' . plugins_url() 
-                . '/hid-simple-twitter-timeline-widget/ajax-loader.gif" alt="loading"/></a>'; 
+                . '/hid-simple-twitter-timeline-widget/spinner_48.gif" alt="loading"/></a>'; 
 
             print $html;
         }
